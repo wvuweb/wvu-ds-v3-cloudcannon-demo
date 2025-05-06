@@ -33,7 +33,7 @@ content_blocks:
     subheading: Subheading.
     items:
       - title: Item 1 Title
-        text: Item 1 text.
+        text: Item 1 text. Test.
         url:
         background_c:
       - title: Item 1 Title
@@ -67,20 +67,6 @@ content_blocks:
       panels:
       item_headings:
       margin:
-    config:
-      edit_mode_only: false
-  - _bookshop_name: design-system/section/big-search
-    label: Label
-    heading: Big Search Heading
-    subheading: Subheading.
-    postscript:
-      copy: Postscript.
-      postscript_links:
-        - text: Here is my Button
-          icon: book
-          url:
-    layout:
-      margin: mb-6
     config:
       edit_mode_only: false
   - _bookshop_name: design-system/section/alternating-grid
@@ -122,27 +108,6 @@ content_blocks:
         edit_mode_only: false
     layout:
       margin: my-n9 p-5 p-xl-6
-    config:
-      edit_mode_only: false
-  - _bookshop_name: design-system/section/quicklinks
-    heading: Quicklinks
-    links:
-      - text: Text
-        url: /url
-      - text: Text
-        url: /url
-      - text: Text
-        url: /url
-    settings:
-      styles: {}
-      layout: {}
-      config:
-        edit_mode_only: false
-        include_heading_postscript: false
-    layout:
-      margin: mt-6
-    styles:
-      background_c: bg-wvu-neutral--warm-gray-dark text-white
     config:
       edit_mode_only: false
 ---
