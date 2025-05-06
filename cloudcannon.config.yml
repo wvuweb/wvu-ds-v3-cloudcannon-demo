@@ -1,0 +1,969 @@
+_schema: _schema
+paths:
+  data: data
+  collections: content
+  includes: layouts
+  layouts: layouts
+  static: assets
+  uploads: assets/uploads
+  source: ''
+  archetypes: archetypes
+  assets: assets
+  content: content
+  pages: content
+  publish: public
+  config: ''
+collections_config:
+  articles:
+    path: content/articles
+    icon: edit
+    output: true
+    parse_branch_index: true
+    description: Articles description
+    _enabled_editors:
+      - visual
+      - data
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    schemas:
+      article:
+        path: .cloudcannon/schemas/article.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        new_preview_url: live-editor-previews/article/
+      photo_essay:
+        path: .cloudcannon/schemas/photo-essay.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        new_preview_url: live-editor-previews/photo-essay/
+  clubs_and_organizations:
+    path: content/clubs-and-organizations
+    icon: favorite
+    output: true
+    parse_branch_index: true
+    description: Clubs and organizations.
+    _enabled_editors:
+      - visual
+      - data
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas:
+      alumni_chapter:
+        path: .cloudcannon/schemas/organization.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '{name_of_organization|slugify}.md'
+        new_preview_url: live-editor-previews/clubs-and-organizations/
+      club:
+        path: .cloudcannon/schemas/organization.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '{name_of_organization|slugify}.md'
+        new_preview_url: live-editor-previews/clubs-and-organizations/
+      student_organization:
+        path: .cloudcannon/schemas/organization.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '{name_of_organization|slugify}.md'
+        new_preview_url: live-editor-previews/clubs-and-organizations/
+  default_content:
+    path: content/default_content
+    icon: toolbar
+    output: false
+    parse_branch_index: true
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+  directory:
+    path: content/directory
+    icon: list
+    output: true
+    parse_branch_index: true
+    _enabled_editors:
+      - visual
+      - data
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+    schemas:
+      directory:
+        path: .cloudcannon/schemas/directory.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+  masthead_nav_footer:
+    path: data/default_content
+    name: Masthead and Footer
+    icon: toolbar
+    output: false
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: false
+  navigation_menus:
+    path: data/menus
+    name: Submenus
+    icon: menu
+    output: false
+    description: Navigation menus you can use throughout the site.
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    schemas:
+      horizontal_subnav:
+        path: .cloudcannon/schemas/horizontal-subnav.yml
+        reorder_inputs: true
+        hide_extra_inputs: true
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '{title|slugify}.yml'
+  pages:
+    path: content
+    glob:
+      - '!directory/index.md'
+    icon: notes
+    output: true
+    parse_branch_index: true
+    description: Pages description
+    _enabled_editors:
+      - visual
+      - data
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas:
+      detail_page:
+        path: .cloudcannon/schemas/detail-page.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        new_preview_url: live-editor-previews/detail/
+      detail_page_index:
+        path: .cloudcannon/schemas/detail-page-index.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '[relative_base_path]/_index.md'
+        new_preview_url: live-editor-previews/detail-index/
+      guide_page:
+        path: .cloudcannon/schemas/guide-page.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        new_preview_url: live-editor-previews/guide/
+      guide_page_test:
+        path: .cloudcannon/schemas/guide-page-test.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        new_preview_url: live-editor-previews/guide-test/
+      guide_page_index:
+        path: .cloudcannon/schemas/guide-page-index.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '[relative_base_path]/_index.md'
+        new_preview_url: /live-editor-previews/guide-index/
+  people:
+    path: content/people
+    icon: group
+    output: false
+    preview:
+      metadata:
+        - text:
+            - key: metadata.type
+    _enabled_editors:
+      - visual
+      - data
+    add_options:
+      - name: Alumni
+        schema: alumni
+      - name: Author
+        schema: author
+      - name: Faculty Member
+        schema: faculty
+      - name: Staff Member
+        schema: staff
+      - name: Student
+        schema: student
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas:
+      alumni:
+        path: .cloudcannon/schemas/alumni.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '{first_name|slugify}-{last_name|slugify}.md'
+        new_preview_url: /live-editor-previews/alumni/
+      author:
+        path: .cloudcannon/schemas/author-profile.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '{first_name|slugify}-{last_name|slugify}.md'
+        new_preview_url: /live-editor-previews/author/
+      faculty:
+        path: .cloudcannon/schemas/faculty-profile.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '{first_name|slugify}-{last_name|slugify}.md'
+        new_preview_url: /live-editor-previews/faculty-profile/
+      staff:
+        path: .cloudcannon/schemas/staff.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '{first_name|slugify}-{last_name|slugify}.md'
+        new_preview_url: /live-editor-previews/staff/
+      student:
+        path: .cloudcannon/schemas/student-profile.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        create:
+          path: '{first_name|slugify}-{last_name|slugify}.md'
+        new_preview_url: /live-editor-previews/student-profile/
+  places_and_spaces:
+    path: content/places-and-spaces
+    icon: location_on
+    output: false
+    _enabled_editors:
+      - visual
+      - data
+    add_options:
+      - name: Facility
+        schema: facility
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas:
+      facility:
+        path: .cloudcannon/schemas/facility.md
+        reorder_inputs: false
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+        new_preview_url: /live-editor-previews/place/
+  sitewide_components:
+    path: data/sitewide_components
+    icon: globe
+    output: false
+    description: Sitewide components
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    schemas:
+      sitewide_quicklinks:
+        path: .cloudcannon/schemas/sitewide-quicklinks.yml
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: false
+        icon: notes
+collection_groups:
+  - heading: Pages
+    collections:
+      - pages
+      - articles
+      - directory
+  - heading: Collections
+    collections:
+      - clubs_and_organizations
+      - partners
+      - people
+      - places_and_spaces
+  - heading: Site
+    collections:
+      - masthead_nav_footer
+      - default_content
+      - navigation_menus
+      - sitewide_components
+_enabled_editors:
+  - visual
+  - content
+  - data
+_inputs:
+  alert_message:
+    type: markdown
+    cascade: true
+  alert_status:
+    type: switch
+    cascade: true
+  alert_type:
+    type: select
+    options:
+      allow_empty: true
+      values:
+        - _select_data.alert_type
+      value_key: type
+    cascade: true
+  article_role:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.article_roles
+    label: Role
+    cascade: true
+  article_tags:
+    type: multiselect
+    options:
+      allow_create: true
+      empty_type: array
+      values: _select_data.article_tags
+    label: Tags
+    cascade: true
+  author:
+    type: select
+    options:
+      allow_empty: true
+      values: data.people_data[?(@.schema == "author")]
+    cascade: true
+  background_c:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.brand_colors
+      value_key: class
+    label: Background Color
+    cascade: true
+  buffer:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.buffers
+      value_key: class
+    cascade: true
+  color:
+    type: select
+    options:
+      allow_empty: true
+      values:
+        - _select_data.brand_colors
+      value_key: class
+    cascade: true
+  color_overlay:
+    type: object
+    options:
+      values: _structures.color_overlay
+    cascade: true
+  column_a:
+    type: object
+    options:
+      structures: _structures.column_blocks
+    label: Column
+    cascade: true
+  column_aa:
+    type: object
+    options:
+      structures: _structures.column_blocks
+    label: Column
+    cascade: true
+  column_b:
+    type: object
+    options:
+      structures: _structures.column_blocks_sm
+    label: Column
+    cascade: true
+  column_c:
+    type: object
+    options:
+      structures: _structures.column_blocks_sm
+    label: Column
+    cascade: true
+  column_d:
+    type: object
+    options:
+      structures: _structures.column_blocks_sm
+    label: Column
+    cascade: true
+  column_e:
+    type: object
+    options:
+      structures: _structures.column_blocks_sm
+    label: Column
+    cascade: true
+  contact:
+    type: select
+    options:
+      allow_empty: false
+      values: data.people_data[?(@.is_contact == true)]
+      value_key: uuid
+    cascade: true
+  contact_list:
+    type: array
+    options:
+      structures: _structures.contact
+    cascade: true
+  contacts:
+    type: array
+    options:
+      allow_empty: true
+      structures: _structures.contacts
+    cascade: true
+  copy:
+    type: markdown
+    options:
+      show_count: true
+    cascade: true
+  ctas:
+    type: array
+    options:
+      structures: _structures.links
+    cascade: true
+  detail_sidebar_blocks:
+    type: array
+    options:
+      structures: _structures.detail_sidebar_blocks
+    cascade: true
+  dir_include:
+    type: switch
+    label: Include in Directory
+    cascade: true
+  edit_mode_only:
+    type: switch
+    cascade: true
+  excerpt:
+    type: markdown
+    cascade: true
+  faculty_member:
+    type: select
+    options:
+      allow_empty: false
+      values: data.people_data[?(@.type == "faculty-profile")]
+      value_key: uuid
+    cascade: true
+  file:
+    type: file
+    cascade: true
+  gradient_1:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.brand_colors
+      value_key: rgba
+    cascade: true
+  gradient_2:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.brand_colors
+      value_key: rgba
+    cascade: true
+  gradient_3:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.brand_colors
+      value_key: rgba
+    cascade: true
+  heading_c:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.brand_colors
+      value_key: class
+    label: Heading Color
+    cascade: true
+  hide:
+    type: datetime
+    cascade: true
+  hide_collection_pages:
+    type: switch
+    cascade: true
+  honors:
+    type: array
+    cascade: true
+  honors[*]:
+    type: text
+    cascade: true
+  image_lg:
+    type: image
+    cascade: true
+  include_heading_postscript:
+    hidden: true
+  is_default_content:
+    type: auto
+    hidden: true
+    cascade: true
+  is_contact:
+    type: auto
+    hidden: true
+    cascade: true
+  job_title:
+    type: array
+    cascade: true
+  job_title[*]:
+    type: text
+    cascade: true
+  label_c:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.brand_colors
+      value_key: class
+    label: Label Color
+    cascade: true
+  # layout:
+  #   type: auto
+  #   hidden: true
+  #   cascade: true
+  limit:
+    type: number
+    cascade: true
+  majors:
+    type: array
+    cascade: true
+  majors[*]:
+    type: text
+    cascade: true
+  margin:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.container_margins
+      value_key: class
+    cascade: true
+  margin_no_bg:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.container_margins_no_bg
+      value_key: class
+    cascade: true
+  max_cols:
+    hidden: true
+  menu:
+    type: select
+    options:
+      allow_empty: true
+      structures: data.menus
+    cascade: true
+  menu_id:
+    type: select
+    options:
+      allow_empty: true
+      values: data.menus
+      value_key: uuid
+    cascade: true
+  message:
+    type: markdown
+    cascade: true
+  metadata:
+    type: auto
+    hidden: true
+    cascade: true
+  minors:
+    type: array
+    cascade: true
+  minors[*]:
+    type: text
+    cascade: true
+  person:
+    type: select
+    options:
+      allow_empty: true
+      values: data.people_data
+    cascade: true
+  postscript_links:
+    type: array
+    options:
+      structures: _structures.links
+    cascade: true
+  publishDate:
+    type: date
+    instance_value: NOW
+    cascade: true
+  quote:
+    type: textarea
+    cascade: true
+  section_background_c:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.brand_colors
+      value_key: class
+    label: Background Color
+    cascade: true
+  show:
+    type: datetime
+    cascade: true
+  show_content:
+    type: switch
+    cascade: true
+  show_author_bios:
+    type: switch
+    cascade: true
+  site_page:
+    type: select
+    options:
+      allow_empty: true
+      values: data.site_pages
+      value_key: id
+      preview:
+        text:
+          - key: title
+    cascade: true
+  sitewide_section:
+    type: select
+    options:
+      allow_empty: true
+      values: data.sitewide_components
+    cascade: true
+  social_media_accounts:
+    type: array
+    options:
+      allow_empty: true
+      values: _structures.social_media_accounts
+    cascade: true
+  social_media_platforms:
+    type: select
+    options:
+      values: _select_data.social_media_platforms
+  src:
+    type: image
+    cascade: true
+  student:
+    type: select
+    options:
+      allow_empty: true
+      values: data.people_data[?(@.schema == 'student')]
+    cascade: true
+  tags:
+    type: multiselect
+    options:
+      allow_create: true
+      allow_empty: true
+      values:
+        - featured
+    cascade: true
+  text_c:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.brand_colors
+      value_key: class
+    cascade: true
+  tint_opacity:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.tint_opacities
+      value_key: value
+    comment: Use with a background image, no blend.
+    cascade: true
+  tint_shade:
+    type: switch
+  topper:
+    type: object
+    options:
+      values: _structures.topper
+    cascade: true
+  topper_type:
+    type: auto
+    hidden: true
+    cascade: true
+  type:
+    type: auto
+    hidden: true
+    cascade: true
+  uuid:
+    type: auto
+    instance_value: UUID
+    hidden: true
+    cascade: true
+  vibe:
+    type: select
+    options:
+      allow_empty: true
+      values: _select_data.vibes
+      value_key: value
+    cascade: true
+_select_data:
+  alert_type:
+    - name: Danger
+      type: danger
+    - name: Info
+      type: info
+    - name: Warning
+      type: warning
+  article_roles:
+    - Author
+    - Photographer
+    - Video
+  article_tags:
+    - Feature
+    - Resource
+    - Custom Label
+  blend_modes:
+    - name: Luminosity
+      class: wvu-bg-blend-mode-luminosity
+    - name: Lighten
+      class: wvu-bg-blend-mode-lighten
+  brand_colors:
+    - name: WVU Gold
+      background_classes: bg-wvu-gold text-dark
+      class: wvu-gold
+      rgba: rgb(0, 0, 0)
+    - name: WVU Blue
+      background_classes: bg-wvu-blue text-white
+      class: wvu-blue
+      rgba: 0, 40, 85
+    - name: Accent - Blue
+      background_classes: bg-wvu-accent--blue text-white
+      class: wvu-accent--blue
+      rgba: 0, 98, 163
+    - name: Accent - Dark Blue
+      background_classes: bg-wvu-accent--blue-dark text-white
+      class: wvu-accent--blue-dark
+      rgba: 28, 43, 57
+    - name: Accent - Light Blue
+      background_classes: bg-wvu-accent--blue-light text-dark
+      class: wvu-accent--blue-light
+      rgba: 157, 218, 230
+    - name: Accent - Yellow
+      background_classes: bg-wvu-accent--yellow text-dark
+      class: wvu-accent--yellow
+      rgba: 255, 229, 57
+    - name: Accent - Old Gold
+      background_classes: bg-wvu-accent--old-gold text-white
+      class: wvu-accent--old-gold
+      rgba: 127, 99, 16
+    - name: Accent - Sunset
+      background_classes: bg-wvu-accent--sunset text-dark
+      class: wvu-accent--sunset
+      rgba: 245, 134, 114
+    - name: Neutral - Off-White
+      background_classes: bg-wvu-neutral--off-white text-dark
+      class: wvu-neutral--off-white
+      rgba: 247, 247, 247
+    - name: Neutral - Warm Gray Light
+      background_classes: bg-wvu-neutral--warm-gray-light text-dark
+      class: wvu-neutral--warm-gray-light
+      rgba: 190,183,179
+    - name: Neutral - Warm Gray Medium
+      background_classes: bg-wvu-neutral--warm-gray-medium text-dark
+      class: wvu-neutral--warm-gray-medium
+      rgba: 152, 142, 139
+    - name: Neutral - Warm Gray Dark
+      background_classes: bg-wvu-neutral--warm-gray-dark text-white
+      class: wvu-neutral--warm-gray-dark
+      rgba: 85, 71, 65
+    - name: Neutral - Cream
+      background_classes: bg-wvu-neutral--cream text-dark
+      class: wvu-neutral--cream
+      rgba: 242, 230, 194
+    - name: Neutral - Tan
+      background_classes: bg-wvu-neutral--tan text-dark
+      class: wvu-neutral--tan
+      rgba: 179, 161, 105
+    - name: Transparent (Dark Text)
+      background_classes: bg-transparent text-dark
+      class: transparent
+      rgba:
+    - name: Transparent (Light Text)
+      background_classes: bg-transparent text-white
+      class: transparent
+      rgba:
+    - name: Dark
+      background_classes: bg-dark text-white
+      class: dark
+      rgba: 42, 42, 41
+  buffers:
+    - name: Buffer Top
+      class: pt-6
+    - name: Buffer Bottom
+      class: pb-6
+    - name: Buffer Both
+      class: py-6
+  container_margins:
+    - name: Pull Up
+      class: mt-n9 p-5 p-xl-6
+    - name: Pull Down
+      class: mb-n9 p-5 p-xl-6
+    - name: Pull Both
+      class: my-n9 p-5 p-xl-6
+  container_margins_no_bg:
+    - name: Pull Up
+      class: mt-n9
+    - name: Pull Down
+      class: mb-n9
+    - name: Pull Both
+      class: my-n9
+  list_styles:
+    - name: Arrows
+      class: wvu-ul-arrows
+    - name: Chevrons
+      class: wvu-ul-chevrons
+  patterns:
+    - name: Topo Map
+      class: wvu-bg-topo-map
+    - name: WV Pattern Grid
+      class: wvu-bg-pattern-grid
+    - name: WV Pattern Grid - Zoomed
+      class: wvu-bg-pattern-grid-zoomed
+  social_media_platforms:
+    - Facebook
+    - Instagram
+    - Twitter / X
+    - YouTube
+  tint_opacities:
+    - name: None
+      value: '0.0'
+    - name: Light
+      value: '0.3'
+    - name: Medium
+      value: '0.5'
+    - name: Dark
+      value: '0.7'
+  topper_margins:
+    - name: Default
+      class: ''
+    - name: Buffer Bottom
+      class: mb-6
+    - name: Buffer Both
+      class: my-6
+  typography_palettes:
+    - name: WVU Experience
+      palette: wvu_experience
+    - name: Down to Business
+      palette: down_to_business
+    - name: Discovery
+      palette: discovery
+    - name: Nostalgic
+      palette: nostalgic
+  vibes:
+    - name: Down to Business
+      value: down-to-business
+    - name: Discovery
+      value: discovery
+    - name: WVU Experience
+      value: wvu-experience
+    - name: Nostalgic
+      value: nostalgic
+_structures:
+  contact:
+    style: select
+    values:
+      - value:
+          contact:
+  contacts:
+    style: select
+    values:
+      - value:
+          name:
+          phone:
+          email:
+  content_blocks:
+    style: modal
+  detail_blocks:
+    style: modal
+  links:
+    style: select
+    values:
+      - value:
+          text:
+          icon:
+          url:
+  social_media_accounts:
+    style: select
+    values:
+      - value:
+          platform:
+          url:
+  test_styles:
+    type: object
+    values:
+      value:
+        vibe:
+        background_c:
+        color_overlay:
+        heading_c:
+        enable_blend: false
+        enable_pattern: false
+        tint_opacity:
+        container_margin:
+_editables:
+  content:
+    allow_custom_markup: false
+    remove_custom_markup: false
+    bold: true
+    bulletedlist: true
+    code: true
+    copyformatting: true
+    embed: true
+    format: p h2 h3 h4 h5 h6
+    horizontalrule: true
+    image: true
+    image_size_attributes: true
+    indent: true
+    italic: true
+    link: true
+    numberedlist: true
+    outdent: true
+    redo: true
+    removeformat: true
+    snippet: true
+    strike: true
+    styles: /assets/scss/custom/_content.scss
+    subscript: true
+    superscript: true
+    table: true
+    underline: true
+    undo: true
+_snippets_imports:
+  hugo: false
+data_config: true
+timezone: US/Eastern
