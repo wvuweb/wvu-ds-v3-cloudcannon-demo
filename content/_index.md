@@ -6,7 +6,7 @@ topper:
   background_image:
   alt_text:
   heading:
-    - text: It Starts Now Test.
+    - text: It Starts Now Test. Nathan Hero.
       highlight:
   subheading: Subheading.
   body_text: >-
@@ -55,6 +55,11 @@ content_blocks:
           - text: Another Button
             url:
             icon: user
+    settings:
+      layout: {}
+      styles: {}
+      config:
+        edit_mode_only: false
     layout:
       margin: mt-n9 p-5 p-xl-6
     styles:
@@ -110,6 +115,11 @@ content_blocks:
           - text: Button Text
             url: https://www.wvu.edu
             icon: book
+    settings:
+      styles: {}
+      layout: {}
+      config:
+        edit_mode_only: false
     layout:
       margin: my-n9 p-5 p-xl-6
     config:
@@ -123,6 +133,12 @@ content_blocks:
         url: /url
       - text: Text
         url: /url
+    settings:
+      styles: {}
+      layout: {}
+      config:
+        edit_mode_only: false
+        include_heading_postscript: false
     layout:
       margin: mt-6
     styles:
