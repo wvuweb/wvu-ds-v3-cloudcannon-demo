@@ -1,0 +1,86 @@
+content_blocks:
+  - _bookshop_name: design-system/section/quicklinks
+    heading: Quicklinks
+    subheading:
+    links:
+      - text: Text
+        url: /url
+    settings:
+      styles:
+        audience:
+        tone:
+        color_palette:
+        bg_subtle:
+        enable_blend: false
+        tint_opacity: '0.7'
+        remove_container_background: false
+      layout:
+        margin:
+        padding: py-6 py-xxl-7
+        buffer:
+      config:
+        edit_mode_only: false
+        include_heading_postscript: false
+    uuid: test-sitewide-quicklinks
+  - _bookshop_name: design-system/section/cards
+    heading:
+    subheading:
+    items:
+      - title: Browse Majors
+        image:
+        alt_text:
+        label:
+        badge:
+        text: >-
+          We have 129 undergraduate majors – everything from criminology to
+          engineering. Scan the list and you may find some options you hadn't
+          considered.
+        ctas:
+          - text: Majors List
+            icon:
+            url:
+      - title: Explore Online Degrees
+        image:
+        alt_text:
+        label:
+        badge:
+        text: >-
+          We offer 9 fully online bachelor’s degree programs. Minors,
+          certificates and associate degrees are available online, too.
+        ctas:
+          - text: Online Programs
+            icon:
+            url:
+      - title: Help Me Find a Major
+        image:
+        alt_text:
+        label:
+        badge:
+        text: >-
+          With so many options, we know it can be hard to decide. Your
+          admissions counselor can help you make a good choice.
+        ctas:
+          - text: Talk with a Counselor
+            icon:
+            url:
+    postscript:
+      copy:
+      ctas:
+    settings:
+      styles:
+        audience: prospective_students
+        tone: default
+        color_palette: option-1
+        bg_subtle:
+        enable_blend: false
+        tint_opacity: '0.7'
+        remove_container_background: true
+      layout:
+        buffer:
+        margin:
+        padding: py-6 py-xxl-7
+      config:
+        edit_mode_only: false
+        include_heading_postscript: true
+        show: '2024-09-01'
+        hide: '2099-09-01'

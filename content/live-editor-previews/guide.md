@@ -1,31 +1,42 @@
 ---
 _schema: guide-page
 title: New Guide Page
-description:
 topper:
   _bookshop_name: design-system/topper/hero
   label:
   background_image:
   alt_text:
-  heading:
-    - text: Heading
-      highlight:
-  subheading: Subheading goes here.
+  heading: Heading
+  subheading: Subheading.
   body_text:
-  styles:
-    vibe: down-to-business
-    background_c:
-    gradient_1:
-    gradient_2:
-    gradient_3:
-    heading_c:
-    enable_blend: false
-    enable_pattern: false
-    tint_opacity: "0.5"
-    container_margin:
+  ctas:
+    - text:
+      button_c:
+      icon:
+      url:
+  postscript:
+    copy:
+    ctas:
+  settings:
+    styles:
+      audience: general
+      tone: loud
+      color_palette: option-2
+      enable_blend: false
+      enable_pattern: false
+      tint_opacity: "0.7"
+      heading_size: display-2
+    layout:
+      buffer:
+      text_placement: mx-auto text-center
+    config:
+      show_label: true
 content_blocks:
-  - _bookshop_name: design-system/section/dummy
-    text: text
+properties:
+  exclude_from_navigation: false
+  exclude_from_search_engines: false
+  meta_description:
+  social_image:
 uuid:
 type: guide
 _unlisted: true

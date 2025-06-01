@@ -1,0 +1,101 @@
+meta_data:
+  description:
+  social_media_image:
+  keywords:
+google_analytics_id:
+social_media_accounts:
+  - platform: Twitter
+    username:
+    url:
+  - platform: Facebook
+    username:
+    url:
+alert_banner:
+  is_active: false
+  alert_type: info
+  home_page_only: false
+  message: Here is my message.
+masthead:
+  lockup_type:
+  parent_org_title:
+  super_heading: West Virginia University
+  title:
+    - Design System 3
+    - Admissions Demo
+  alternate_logo:
+  buttons:
+    button_1: 
+      text: Apply Now
+      url:
+    button_2:
+      text: Request Info
+      url:
+    button_3:
+      text: Visit WVU
+      url:
+parent_org:
+  title:
+  url:
+primary_navigation:
+  status: active
+  enable_dropdowns: true
+  nav_links:
+    - text: Home
+      link: /
+      sub_nav_links: []
+    - text: How to Apply
+      link: /how-to-apply/
+      sub_nav_links: []
+    - text: Academics
+      link: /academics/
+      sub_nav_links:
+        - text: Academic Services
+          link: /academics/academic-services/
+    - text: Cost and Aid
+      link: /cost-and-aid/
+      sub_nav_links: []
+    - text: Life at WVU
+      link: /life-at-wvu/
+      sub_nav_links: []
+    - text: Admitted Students
+      link: /admitted/
+      sub_nav_links:
+        - text: First-Time Freshmen
+          link: /admitted/first-time-freshmen/
+default_content:
+  cta_banner:
+    show: false
+    weight: 10
+  featurettes:
+    show: false
+    weight: 20
+  mailing_list:
+    show: false
+    weight: 30
+footer:
+  contact_info_blocks:
+    - address_heading: West Virginia University
+      address:
+        - 1234 Donley Street
+        - Morgantown, WV 26505
+      phone: (304) 123-4567
+      email: email@mail.wvu.edu
+  quicklinks:
+    - text: Connect with Your Admissions Counselor
+      url:
+    - text: Contact WVU Admissions
+      url:
+  postscript:
+    heading:
+    items:
+      - label:
+        text:
+        url:
+  # postscript:
+  #   heading: Important WVU Codes
+  #   items:
+  #     - label: 'SAT:'
+  #       text: '5904'
+  #       url:
+extras:
+  chatbot_url:

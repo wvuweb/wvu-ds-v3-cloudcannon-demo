@@ -113,14 +113,6 @@ collections_config:
         remove_empty_inputs: false
         remove_extra_inputs: false
         icon: notes
-  masthead_nav_footer:
-    path: data/default_content
-    name: Masthead and Footer
-    icon: toolbar
-    output: false
-    disable_add: true
-    disable_add_folder: true
-    disable_file_actions: false
   navigation_menus:
     path: data/menus
     name: Submenus
@@ -181,14 +173,6 @@ collections_config:
         remove_extra_inputs: false
         icon: notes
         new_preview_url: live-editor-previews/guide/
-      guide_page_test:
-        path: .cloudcannon/schemas/guide-page-test.md
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: false
-        icon: notes
-        new_preview_url: live-editor-previews/guide-test/
       guide_page_index:
         path: .cloudcannon/schemas/guide-page-index.md
         reorder_inputs: true
@@ -302,19 +286,19 @@ collections_config:
     icon: globe
     output: false
     description: Sitewide components
-    disable_add: false
+    disable_add: true
     disable_add_folder: true
-    disable_file_actions: false
-    schemas:
-      sitewide_quicklinks:
-        path: .cloudcannon/schemas/sitewide-quicklinks.yml
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: false
-        icon: notes
+    disable_file_actions: true
+  settings:
+    path: data/settings
+    name: Settings
+    icon: toolbar
+    output: false
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
 collection_groups:
-  - heading: Pages
+  - heading: Page Types
     collections:
       - pages
       - articles
@@ -327,8 +311,7 @@ collection_groups:
       - places_and_spaces
   - heading: Site
     collections:
-      - masthead_nav_footer
-      - default_content
+      - settings
       - navigation_menus
       - sitewide_components
 _enabled_editors:
@@ -365,6 +348,21 @@ _inputs:
       values: _select_data.article_tags
     label: Tags
     cascade: true
+  audience:
+    label: Style
+    type: choice
+    options:
+      allow_empty: false
+      values:
+        - name: General
+          class: general
+        - name: Academic / Traditional
+          class: alumni
+        - name: Modern + Formal
+          class: leaders_partners
+        - name: Prospective Students
+          class: prospective_students
+      value_key: class
   author:
     type: select
     options:
@@ -379,6 +377,10 @@ _inputs:
       value_key: class
     label: Background Color
     cascade: true
+  bg_subtle:
+    type: checkbox
+  bio_text:
+    type: markdown
   buffer:
     type: select
     options:
@@ -399,6 +401,12 @@ _inputs:
     options:
       values: _structures.color_overlay
     cascade: true
+  color_palette:
+    type: choice
+    options:
+      allow_empty: false
+      values: _select_data.color_palettes
+      value_key: class
   column_a:
     type: object
     options:
@@ -411,6 +419,24 @@ _inputs:
       structures: _structures.column_blocks
     label: Column
     cascade: true
+  column_aaa:
+    type: object
+    options:
+      structures: _structures.column_blocks_sm
+    label: Column
+    cascade: true
+  column_bbb:
+    type: object
+    options:
+      structures: _structures.column_blocks_sm
+    label: Column
+    cascade: true
+  column_aaaa:
+    type: object
+    options:
+      structures: _structures.column_blocks_sm
+    label: Column
+    cascade: true
   column_b:
     type: object
     options:
@@ -418,18 +444,6 @@ _inputs:
     label: Column
     cascade: true
   column_c:
-    type: object
-    options:
-      structures: _structures.column_blocks_sm
-    label: Column
-    cascade: true
-  column_d:
-    type: object
-    options:
-      structures: _structures.column_blocks_sm
-    label: Column
-    cascade: true
-  column_e:
     type: object
     options:
       structures: _structures.column_blocks_sm
@@ -509,6 +523,10 @@ _inputs:
       values: _select_data.brand_colors
       value_key: rgba
     cascade: true
+  graduation_years:
+    type: array
+  graduation_years[*]:
+    type: text
   heading_c:
     type: select
     options:
@@ -542,6 +560,8 @@ _inputs:
     type: auto
     hidden: true
     cascade: true
+  is_nested:
+    hidden: true
   job_title:
     type: array
     cascade: true
@@ -611,6 +631,13 @@ _inputs:
   minors[*]:
     type: text
     cascade: true
+  nav_links:
+    type: array
+    options:
+      structures: _structures.nav_item
+    cascade: true
+  padding:
+    hidden: true
   person:
     type: select
     options:
@@ -660,7 +687,7 @@ _inputs:
     type: select
     options:
       allow_empty: true
-      values: data.sitewide_components
+      values: data.sitewide_components.sitewide_components
     cascade: true
   social_media_accounts:
     type: array
@@ -680,6 +707,11 @@ _inputs:
     options:
       allow_empty: true
       values: data.people_data[?(@.schema == 'student')]
+    cascade: true
+  sub_nav_links:
+    type: array
+    options:
+      structures: _structures.sub_nav_item
     cascade: true
   tags:
     type: multiselect
@@ -706,6 +738,20 @@ _inputs:
     cascade: true
   tint_shade:
     type: switch
+  tone:
+    type: choice
+    options:
+      allow_empty: false
+      values:
+        - name: Default
+          class: "default"
+        - name: Reserved
+          class: "reserved"
+        - name: Loud
+          class: "loud"
+        - name: Let’s Go!
+          class: "lets-go"
+      value_key: class
   topper:
     type: object
     options:
@@ -756,7 +802,7 @@ _select_data:
     - name: WVU Gold
       background_classes: bg-wvu-gold text-dark
       class: wvu-gold
-      rgba: rgb(0, 0, 0)
+      rgba: 234,170,0
     - name: WVU Blue
       background_classes: bg-wvu-blue text-white
       class: wvu-blue
@@ -828,13 +874,30 @@ _select_data:
       class: pb-6
     - name: Buffer Both
       class: py-6
+  color_palettes:
+    - name: Option 1
+      class: "option-1"
+    - name: Option 2
+      class: "option-2"
+    - name: Option 3
+      class: "option-3"
+    - name: Option 4
+      class: "option-4"
+    - name: Option 5
+      class: "option-5"
+    - name: Option 6
+      class: "option-6"
+    - name: Option 7
+      class: "option-7"
+    - name: Option 8
+      class: "option-8"
   container_margins:
     - name: Pull Up
-      class: mt-n9 p-5 p-xl-6
+      class: mt-n8 mt-xxl-n9
     - name: Pull Down
-      class: mb-n9 p-5 p-xl-6
+      class: mb-n8 mb-xxl-n9
     - name: Pull Both
-      class: my-n9 p-5 p-xl-6
+      class: my-n8 my-xxl-n9
   container_margins_no_bg:
     - name: Pull Up
       class: mt-n9
@@ -917,12 +980,27 @@ _structures:
           text:
           icon:
           url:
+  nav_item:
+    style: select
+    values:
+      - label: Link
+        value:
+          text:
+          link:
+          sub_nav_links:
   social_media_accounts:
     style: select
     values:
       - value:
           platform:
           url:
+  sub_nav_item:
+    style: select
+    values:
+      - label: link
+        value:
+          text:
+          link:
   test_styles:
     type: object
     values:

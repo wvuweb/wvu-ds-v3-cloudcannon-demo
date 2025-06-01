@@ -4,21 +4,6 @@ image:
 alt_text:
 logo:
 organization_topper:
-  _bookshop_name: design-system/topper/organization
-  heading:
-  subheading:
-  use_large_background: false
-  styles:
-    vibe: down-to-business
-    background_c:
-    gradient_1:
-    gradient_2:
-    gradient_3:
-    heading_c:
-    enable_blend: true
-    enable_pattern: false
-    tint_opacity: "0.5"
-    margin:
 description:
 location:
 contacts:
@@ -27,6 +12,10 @@ detail_blocks:
   - _bookshop_name: design-system/column/rich-text
     text: Text.
 profile_sidebar_blocks:
+properties:
+  exclude_from_search_engines: false
+  meta_description:
+  social_image:
 type: organization
 uuid:
 metadata:

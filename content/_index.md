@@ -3,111 +3,209 @@ title: Home
 topper:
   _bookshop_name: design-system/topper/hero
   label:
-  background_image:
+  background_image: /uploads/guy-sitting-outside.jpg
   alt_text:
-  heading:
-    - text: It Starts Now Test. Nathan Hero.
-      highlight:
-  subheading: Subheading.
-  body_text: >-
-    Here is some body text. Here is some **bold text**. Here is [a
-    link](https://www.wvu.edu).
-  styles:
-    vibe: wvu-experience
-    background_c: bg-wvu-blue text-white
-    gradient_1:
-    gradient_2:
-    gradient_3:
-    heading_c: wvu-gold
-    enable_blend: false
-    enable_pattern: false
-    tint_opacity: '0.5'
-    container_margin: my-6
-  layout:
-    container_margin: mb-6
-  config:
-    show_label: false
-content_blocks:
-  - _bookshop_name: design-system/section/page-collection
-    heading: Heading
-    subheading: Subheading.
-    items:
-      - title: Item 1 Title
-        text: Item 1 text. Test.
-        url:
-        background_c:
-      - title: Item 1 Title
-        text: Item 1 text.
-        url:
-        background_c: bg-wvu-accent--sunset text-dark
-      - title: Item 1 Title
-        text: Item 1 text.
-        url:
-        background_c: bg-wvu-neutral--cream text-dark
-    postscript:
-      copy: Test postscript.
-      postscript_ctas:
-        _bookshop_name: design-system/generic/button-group
-        buttons:
-          - text: My Button
-            url:
-            icon: book
-          - text: Another Button
-            url:
-            icon: user
-    settings:
-      layout: {}
-      styles: {}
-      config:
-        edit_mode_only: false
-    layout:
-      margin: mt-n9 p-5 p-xl-6
+  heading: Be Bold Enough to Dream Big
+  subheading: The first thing you’ll learn here is that “impossible” is just a challenge.
+  body_text: ''
+  ctas: []
+  settings:
     styles:
-      background_c: bg-wvu-neutral--warm-gray-light text-dark
-      panels:
-      item_headings:
-      margin:
+      audience: prospective_students
+      tone: lets-go
+      color_palette: option-1
+      enable_blend: false
+      enable_pattern: false
+      tint_opacity: '0.5'
+    layout:
+      buffer: py-6
+      text_placement: mx-auto text-center
     config:
-      edit_mode_only: false
-  - _bookshop_name: design-system/section/alternating-grid
-    heading: Alternating Grid Heading
-    subheading: Subheading goes here.
+      show_label: true
+content_blocks:
+  - _bookshop_name: design-system/section/cards-simple
+    heading:
+    subheading:
     items:
-      - heading: Item Heading
-        image: /uploads/34750-s-bfp-0046-xx.jpg
-        alt_text:
-        copy: Here is my copy.
-        item_ctas:
-          _bookshop_name: design-system/generic/buttons
-          buttons:
-            - text: CTA 1
-              url: https://www.wvu.edu
-              icon: book
-      - heading: Item Heading
+      - title: Browse Majors
         image:
         alt_text:
-        copy: ''
-        item_ctas:
-          _bookshop_name: design-system/generic/link-list
-          list_style: wvu-ul-arrows
-          items:
-            - text: Here is my item
-              url: https://www.wvu.edu
+        label:
+        badge:
+        text: >-
+          We have 129 undergraduate majors – everything from criminology to
+          engineering. Scan the list and you may find some options you hadn't
+          considered.
+        url:
+        background_c:
+        accent_c:
+      - title: Explore Online Degrees
+        image:
+        alt_text:
+        label:
+        badge:
+        text: >-
+          We offer 9 fully online bachelor’s degree programs. Minors,
+          certificates and associate degrees are available online, too.
+        url:
+        background_c:
+        accent_c:
+      - title: Help Me Find a Major
+        image:
+        alt_text:
+        label:
+        badge:
+        text: >-
+          With so many options, we know it can be hard to decide. Your
+          admissions counselor can help you make a good choice.
+        url:
+        background_c:
+        accent_c:
     postscript:
-      copy: ''
-      postscript_ctas:
-        _bookshop_name: design-system/generic/button-group
-        buttons:
-          - text: Button Text
-            url: https://www.wvu.edu
-            icon: book
+      copy:
+      ctas:
     settings:
-      styles: {}
-      layout: {}
+      styles:
+        audience: prospective_students
+        tone: loud
+        card_c: option-6
+        bg_subtle:
+        enable_blend: false
+        tint_opacity: '0.7'
+        remove_container_background: true
+      layout:
+        buffer:
+        margin: mt-n9
+        padding: py-6 py-xxl-7
       config:
         edit_mode_only: false
-    layout:
-      margin: my-n9 p-5 p-xl-6
-    config:
-      edit_mode_only: false
+        include_heading_postscript: true
+        show: '2024-09-01'
+        hide: '2099-09-01'
+  - _bookshop_name: design-system/section/columns-2-1
+    background_image: /uploads/guy-sitting-outside.jpg
+    alt_text:
+    column_a:
+      _bookshop_name: design-system/column/cta-banner
+      heading: Estimate Your Scholarships
+      subheading: >-
+        We offer scholarships to first-time freshmen, transfers and
+        international students.
+      buttons:
+        - text: Explore Scholarships
+          url:
+          icon:
+          button_c:
+      settings:
+        styles:
+          background_c:
+          buttons_c:
+        layout:
+          margin:
+          buffer:
+        config:
+    column_aa:
+      _bookshop_name: design-system/column/info-card
+      heading: Tuition Rates
+      subheading: Looking for a quick ballpark figure? We have you covered.
+      copy: >-
+        **In addition to the rates above, your program will charge college
+        tuition.** [Find your program's college tuition
+        rate](https://tuition.wvu.edu/undergraduate/morgantown-campus).
+
+
+        *Rates for 2024-2025. Rates are subject to change. Listed costs are
+        based on two semesters with a minimum of 12 credits each. Housing
+        expenses are based on residence hall double occupancy and the Go Anytime
+        dining plan. Visit* [*tuition.wvu.edu*](https://tuition.wvu.edu/) *for
+        rates by program.*
+
+
+        *Tuition and fees are usually not the only educational expenses you may
+        have while pursuing a degree. You may have other costs such as books,
+        supplies and living expenses. Please see the* [*Estimate Costs and Aid
+        webpage*](https://financialaid.wvu.edu/home/estimate-costs-aid) *for how
+        to estimate and plan for other potential expenses.*
+      card_c:
+    settings:
+      styles:
+        audience: prospective_students
+        tone: loud
+        color_palette: option-5
+        bg_subtle:
+        enable_blend: true
+        tint_opacity: '0.0'
+        remove_container_background: false
+      layout:
+        buffer:
+        margin:
+        padding: py-6 py-xxl-7
+      config:
+        edit_mode_only: false
+        include_heading_postscript: false
+        show: '2024-09-01'
+        hide: '2099-09-01'
+    is_nested: true
+    _is_nested: true
+  - _bookshop_name: design-system/section/profile-generic
+    component_name: profile-generic
+    heading: Let’s do some cool stuff
+    name: Jillian Blair
+    image: /uploads/jillian.png
+    super_heading:
+      - Class of 2026
+    info:
+      - Morgantown, WV
+      - Biochemistry Major
+    copy: Here is some test copy.
+    ctas:
+      - text: College of Applied Human Sciences
+        icon:
+        url:
+      - text: Adventure West Virginia
+        icon:
+        url:
+    settings:
+      styles:
+        audience: prospective_students
+        tone: lets-go
+        card_c: option-1
+        bg_subtle:
+        enable_blend: false
+        tint_opacity: '0.7'
+        remove_container_background: false
+      layout:
+        buffer:
+        margin_no_bg:
+        padding: py-6 py-xxl-7
+        is_cutout: true
+      config:
+        edit_mode_only: false
+        include_heading_postscript: false
+        show: '2024-09-01'
+        hide: '2099-09-01'
+  - _bookshop_name: design-system/section/quicklinks
+    heading: Quicklinks
+    subheading:
+    links: []
+    settings:
+      styles:
+        audience: general
+        tone: default
+        color_palette: option-1
+        bg_subtle:
+        enable_blend: false
+        tint_opacity: '0.7'
+        remove_container_background: false
+      layout:
+        buffer:
+        margin:
+        padding: py-6 py-xxl-7
+      config:
+        edit_mode_only: false
+        include_heading_postscript: false
+cascade:
+  audience: general
+uuid:
+type: guide
 ---
