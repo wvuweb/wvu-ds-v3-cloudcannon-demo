@@ -28,13 +28,13 @@ alumni_profile_topper:
   alt_text:
   settings:
     styles:
-      audience: prospective_students
+      audience:
       tone: default
-      color_palette: option-3
+      color_palette: option-1
       tint_opacity: "0.7"
     layout:
       background_position:
-    config:
+      text_placement: mx-auto
 detail_blocks:
   - _bookshop_name: design-system/column/rich-text
     text: Text. How fast can I type?

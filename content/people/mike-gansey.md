@@ -22,14 +22,16 @@ dir_include: false
 alumni_profile_topper:
   _bookshop_name: design-system/topper/alumni
   background_image:
+  alt_text:
   settings:
     styles:
-      audience: prospective_students
-      tone: lets-go
+      audience:
+      tone: default
       color_palette: option-1
-      tint_opacity: '0.7'
+      tint_opacity: "0.7"
     layout:
-      text_placement:
+      background_position:
+      text_placement: mx-auto
 detail_blocks:
   - _bookshop_name: design-system/column/rich-text
     text: Text.

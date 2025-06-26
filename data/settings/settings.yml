@@ -14,17 +14,17 @@ alert_banner:
   is_active: false
   alert_type: info
   home_page_only: false
-  message: Here is my message.
+  markdown: Here is my message.
 masthead:
   lockup_type:
   parent_org_title:
   super_heading: West Virginia University
   title:
-    - Design System 3
-    - Admissions Demo
+    - Greatest Of All Time
+    - GOAT Demo
   alternate_logo:
   buttons:
-    button_1: 
+    button_1:
       text: Apply Now
       url:
     button_2:
@@ -34,34 +34,40 @@ masthead:
       text: Visit WVU
       url:
 parent_org:
-  title:
-  url:
+  title: Strategic Communications and Marketing
+  url: https://strategiccommunicationsandmarketing.wvu.edu
 primary_navigation:
-  status: active
+  hide_primary_nav: false
   enable_dropdowns: true
   nav_links:
-    - text: Home
-      link: /
-      sub_nav_links: []
-    - text: How to Apply
-      link: /how-to-apply/
-      sub_nav_links: []
-    - text: Academics
-      link: /academics/
+    - text: Getting Started
+      link: /getting-started/
       sub_nav_links:
-        - text: Academic Services
-          link: /academics/academic-services/
-    - text: Cost and Aid
-      link: /cost-and-aid/
-      sub_nav_links: []
-    - text: Life at WVU
-      link: /life-at-wvu/
-      sub_nav_links: []
-    - text: Admitted Students
-      link: /admitted/
+        - text: What’s New
+          link: /getting-started/what-s-new
+        - text: Principles
+          link: /getting-started/principles
+        - text: Guidelines and Best Practices
+          link: /getting-started/guidelines-and-best-practices
+    - text: Utilities
+      link: /utilities/
       sub_nav_links:
-        - text: First-Time Freshmen
-          link: /admitted/first-time-freshmen/
+        - text: Typography
+          link: /utilities/typography/
+        - text: Color
+          link: /utilities/color/
+    - text: Components
+      link: /components/
+      sub_nav_links:
+    - text: Templates
+      link: /templates/
+      sub_nav_links:
+    - text: Examples
+      link: /example-pages/
+      sub_nav_links:
+    - text: How-Tos and Tips
+      link: /how-tos-and-tips/
+      sub_nav_links:
 default_content:
   cta_banner:
     show: false
@@ -80,22 +86,18 @@ footer:
         - Morgantown, WV 26505
       phone: (304) 123-4567
       email: email@mail.wvu.edu
+  quicklinks_heading: Quicklinks
   quicklinks:
     - text: Connect with Your Admissions Counselor
       url:
     - text: Contact WVU Admissions
       url:
   postscript:
-    heading:
+    show: false
+    text:
     items:
       - label:
         text:
         url:
-  # postscript:
-  #   heading: Important WVU Codes
-  #   items:
-  #     - label: 'SAT:'
-  #       text: '5904'
-  #       url:
 extras:
   chatbot_url:

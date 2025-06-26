@@ -58,33 +58,33 @@ collections_config:
     schemas:
       alumni_chapter:
         path: .cloudcannon/schemas/organization.md
-        reorder_inputs: true
+        reorder_inputs: false
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: false
         icon: notes
         create:
-          path: '{name_of_organization|slugify}.md'
+          path: '{name|slugify}.md'
         new_preview_url: live-editor-previews/clubs-and-organizations/
       club:
         path: .cloudcannon/schemas/organization.md
-        reorder_inputs: true
+        reorder_inputs: false
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: false
         icon: notes
         create:
-          path: '{name_of_organization|slugify}.md'
+          path: '{name|slugify}.md'
         new_preview_url: live-editor-previews/clubs-and-organizations/
       student_organization:
         path: .cloudcannon/schemas/organization.md
-        reorder_inputs: true
+        reorder_inputs: false
         hide_extra_inputs: false
         remove_empty_inputs: false
         remove_extra_inputs: false
         icon: notes
         create:
-          path: '{name_of_organization|slugify}.md'
+          path: '{name|slugify}.md'
         new_preview_url: live-editor-previews/clubs-and-organizations/
   default_content:
     path: content/default_content
@@ -217,7 +217,7 @@ collections_config:
         remove_extra_inputs: false
         icon: notes
         create:
-          path: '{first_name|slugify}-{last_name|slugify}.md'
+          path: '{name|slugify}.md'
         new_preview_url: /live-editor-previews/alumni/
       author:
         path: .cloudcannon/schemas/author-profile.md
@@ -227,7 +227,7 @@ collections_config:
         remove_extra_inputs: false
         icon: notes
         create:
-          path: '{first_name|slugify}-{last_name|slugify}.md'
+          path: '{name|slugify}.md'
         new_preview_url: /live-editor-previews/author/
       faculty:
         path: .cloudcannon/schemas/faculty-profile.md
@@ -237,7 +237,7 @@ collections_config:
         remove_extra_inputs: false
         icon: notes
         create:
-          path: '{first_name|slugify}-{last_name|slugify}.md'
+          path: '{name|slugify}.md'
         new_preview_url: /live-editor-previews/faculty-profile/
       staff:
         path: .cloudcannon/schemas/staff.md
@@ -247,7 +247,7 @@ collections_config:
         remove_extra_inputs: false
         icon: notes
         create:
-          path: '{first_name|slugify}-{last_name|slugify}.md'
+          path: '{name|slugify}.md'
         new_preview_url: /live-editor-previews/staff/
       student:
         path: .cloudcannon/schemas/student-profile.md
@@ -257,7 +257,7 @@ collections_config:
         remove_extra_inputs: false
         icon: notes
         create:
-          path: '{first_name|slugify}-{last_name|slugify}.md'
+          path: '{name|slugify}.md'
         new_preview_url: /live-editor-previews/student-profile/
   places_and_spaces:
     path: content/places-and-spaces
@@ -280,6 +280,8 @@ collections_config:
         remove_empty_inputs: false
         remove_extra_inputs: false
         icon: notes
+        create:
+          path: '{name|slugify}.md'
         new_preview_url: /live-editor-previews/place/
   sitewide_components:
     path: data/sitewide_components
@@ -340,14 +342,6 @@ _inputs:
       values: _select_data.article_roles
     label: Role
     cascade: true
-  article_tags:
-    type: multiselect
-    options:
-      allow_create: true
-      empty_type: array
-      values: _select_data.article_tags
-    label: Tags
-    cascade: true
   audience:
     label: Style
     type: choice
@@ -368,6 +362,7 @@ _inputs:
     options:
       allow_empty: true
       values: data.people_data[?(@.schema == "author")]
+      value_key: uuid
     cascade: true
   background_c:
     type: select
@@ -377,6 +372,12 @@ _inputs:
       value_key: class
     label: Background Color
     cascade: true
+  background_image:
+    type: image
+    options:
+      width: 1920
+      height: 1080
+      prevent_resize_existing_files: false
   bg_subtle:
     type: checkbox
   bio_text:
@@ -416,16 +417,10 @@ _inputs:
   column_aa:
     type: object
     options:
-      structures: _structures.column_blocks
-    label: Column
-    cascade: true
-  column_aaa:
-    type: object
-    options:
       structures: _structures.column_blocks_sm
     label: Column
     cascade: true
-  column_bbb:
+  column_aaa:
     type: object
     options:
       structures: _structures.column_blocks_sm
@@ -438,6 +433,12 @@ _inputs:
     label: Column
     cascade: true
   column_b:
+    type: object
+    options:
+      structures: _structures.column_blocks
+    label: Column
+    cascade: true
+  column_bbb:
     type: object
     options:
       structures: _structures.column_blocks_sm
@@ -489,8 +490,11 @@ _inputs:
   edit_mode_only:
     type: switch
     cascade: true
+  enable_blend:
+    type: checkbox
+    comment: Apply a Multiply effect to blend the background photo with your background color.
   excerpt:
-    type: markdown
+    type: textarea
     cascade: true
   faculty_member:
     type: select
@@ -502,6 +506,8 @@ _inputs:
   file:
     type: file
     cascade: true
+  full_bleed:
+    hidden: true
   gradient_1:
     type: select
     options:
@@ -535,12 +541,24 @@ _inputs:
       value_key: class
     label: Heading Color
     cascade: true
+  heading_size:
+    type: select
+    options:
+      values:
+        - name: Large
+          class: display-2
+        - name: Medium
+          class: display-3
+        - name: Small
+          class: display-4
   hide:
     type: datetime
     cascade: true
   hide_collection_pages:
     type: switch
     cascade: true
+  hide_primary_nav:
+    type: checkbox
   honors:
     type: array
     cascade: true
@@ -550,8 +568,15 @@ _inputs:
   image_lg:
     type: image
     cascade: true
+  image_source:
+    type: image
+    options:
+      width: 1920
+      height: 1080
   include_heading_postscript:
     hidden: true
+  instance:
+    type: number
   is_default_content:
     type: auto
     hidden: true
@@ -560,6 +585,8 @@ _inputs:
     type: auto
     hidden: true
     cascade: true
+  is_dynamic:
+    hidden: true
   is_nested:
     hidden: true
   job_title:
@@ -576,13 +603,17 @@ _inputs:
       value_key: class
     label: Label Color
     cascade: true
-  # layout:
-  #   type: auto
-  #   hidden: true
-  #   cascade: true
   limit:
     type: number
     cascade: true
+  lines:
+    type: array
+  lines[*]:
+    type: text
+  location:
+    type: array
+    options:
+      values: _structures.location
   majors:
     type: array
     cascade: true
@@ -664,6 +695,10 @@ _inputs:
       value_key: class
     label: Background Color
     cascade: true
+  settings:
+    type: object
+    options:
+      subtype: tabbed
   show:
     type: datetime
     cascade: true
@@ -695,10 +730,6 @@ _inputs:
       allow_empty: true
       values: _structures.social_media_accounts
     cascade: true
-  social_media_platforms:
-    type: select
-    options:
-      values: _select_data.social_media_platforms
   src:
     type: image
     cascade: true
@@ -728,13 +759,25 @@ _inputs:
       values: _select_data.brand_colors
       value_key: class
     cascade: true
+  text_placement:
+    type: select
+    options:
+      values:
+        - name: Left
+          class: me-auto text-start
+        - name: Center
+          class: mx-auto text-center
+        - name: Right
+          class: ms-auto text-start
+      value_key: class
+    comment: Use to place the text based on the composition of your background image.
   tint_opacity:
     type: select
     options:
       allow_empty: true
       values: _select_data.tint_opacities
       value_key: value
-    comment: Use with a background image, no blend.
+    comment: Use to improve text legibility when using a background image. Disabled when blend is enabled.
     cascade: true
   tint_shade:
     type: switch
@@ -744,13 +787,13 @@ _inputs:
       allow_empty: false
       values:
         - name: Default
-          class: "default"
+          class: default
         - name: Reserved
-          class: "reserved"
+          class: reserved
         - name: Loud
-          class: "loud"
+          class: loud
         - name: Let’s Go!
-          class: "lets-go"
+          class: lets-go
       value_key: class
   topper:
     type: object
@@ -783,16 +826,14 @@ _select_data:
       type: danger
     - name: Info
       type: info
+    - name: Success
+      type: success
     - name: Warning
       type: warning
   article_roles:
     - Author
     - Photographer
     - Video
-  article_tags:
-    - Feature
-    - Resource
-    - Custom Label
   blend_modes:
     - name: Luminosity
       class: wvu-bg-blend-mode-luminosity
@@ -876,21 +917,21 @@ _select_data:
       class: py-6
   color_palettes:
     - name: Option 1
-      class: "option-1"
+      class: option-1
     - name: Option 2
-      class: "option-2"
+      class: option-2
     - name: Option 3
-      class: "option-3"
+      class: option-3
     - name: Option 4
-      class: "option-4"
+      class: option-4
     - name: Option 5
-      class: "option-5"
+      class: option-5
     - name: Option 6
-      class: "option-6"
+      class: option-6
     - name: Option 7
-      class: "option-7"
+      class: option-7
     - name: Option 8
-      class: "option-8"
+      class: option-8
   container_margins:
     - name: Pull Up
       class: mt-n8 mt-xxl-n9
@@ -957,6 +998,11 @@ _select_data:
     - name: Nostalgic
       value: nostalgic
 _structures:
+  authors:
+    values:
+      - value:
+          author:
+          article_role:
   contact:
     style: select
     values:
@@ -967,6 +1013,7 @@ _structures:
     values:
       - value:
           name:
+          title:
           phone:
           email:
   content_blocks:
@@ -980,6 +1027,12 @@ _structures:
           text:
           icon:
           url:
+  location:
+    values:
+      - value:
+          name:
+          lines:
+          map_link:
   nav_item:
     style: select
     values:
@@ -993,6 +1046,7 @@ _structures:
     values:
       - value:
           platform:
+          icon:
           url:
   sub_nav_item:
     style: select

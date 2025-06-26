@@ -2,10 +2,9 @@
 name: New Alumni
 first_name:
 last_name:
-image_lg:
+url:
 profile_image:
-heading:
-subheading:
+image_lg:
 majors: []
 occupation:
 job_title: []
@@ -15,6 +14,8 @@ quote:
 dir_include: false
 alumni_profile_topper:
   _bookshop_name: design-system/topper/alumni
+heading:
+subheading:
 detail_blocks:
   - _bookshop_name: design-system/column/rich-text
     text: Text.

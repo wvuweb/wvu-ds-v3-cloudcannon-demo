@@ -4,10 +4,6 @@ title: 'Admissions'
 timeZone: America/New_York
 staticDir: assets
 
-disableKinds:
-  - taxonomy
-  - term
-
 markup:
   goldmark:
     renderer:
@@ -67,5 +63,9 @@ menus:
       pageReg: /how-to-apply/first-time-freshmen
       weight: 90
 
+taxonomies:
+  category: categories
+  tag: tags
+  
 params:
   audience: general

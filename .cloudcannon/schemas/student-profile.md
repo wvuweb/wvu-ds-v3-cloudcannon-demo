@@ -2,8 +2,9 @@
 name: New Student
 first_name:
 last_name:
-image_lg:
+url:
 profile_image:
+image_lg:
 description:
 college:
 school:
@@ -14,6 +15,8 @@ graduation_year:
 quote:
 dir_include: false
 student_profile_topper:
+heading:
+subheading:
 detail_blocks:
   - _bookshop_name: design-system/column/rich-text
     text: Text.
@@ -22,6 +25,7 @@ properties:
   exclude_from_search_engines: false
   meta_description:
   social_image:
+  recirculate: true
 uuid:
 type: student-profile
 metadata:

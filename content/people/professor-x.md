@@ -3,10 +3,8 @@ _schema: faculty
 name: Professor X
 first_name: Professor
 last_name: X
-image_lg:
-  src: /uploads/34750-s-bfp-0046-xx.jpg
-  alt:
 profile_image: /uploads/34750-s-bfp-0046-xx.jpg
+image_lg: /uploads/34750-s-bfp-0046-xx.jpg
 description:
 position:
   - organization: Organization
@@ -31,17 +29,19 @@ tags:
   - Eberly Faculty
 faculty_profile_topper:
   _bookshop_name: design-system/topper/faculty-profile
-  styles:
-    vibe: down-to-business
-    background_c:
-    gradient_1:
-    gradient_2:
-    gradient_3:
-    heading_c:
-    enable_blend: false
-    enable_pattern: false
-    tint_opacity: '0.5'
-    container_margin:
+  background_image:
+  alt_text:
+  settings:
+    styles:
+      audience:
+      tone: default
+      color_palette: option-2
+      tint_opacity: "0.7"
+    layout:
+      background_position:
+      text_placement: mx-auto
+heading:
+subheading:
 detail_blocks:
   - _bookshop_name: design-system/column/rich-text
     text: Text.
