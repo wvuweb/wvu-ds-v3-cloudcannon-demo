@@ -39,7 +39,7 @@ var walk = function(dir, done) {
                         publishDate: doc.attributes.publishDate,
                         contact_details: doc.attributes.contact_details,
                         // excerpt: doc.body.slice(0, doc.body.indexOf("\n")),
-                        content: doc.body,
+                        // content: doc.body,
                         image: doc.attributes.image,
                         tags: doc.attributes.tags,
                         type: doc.attributes.type

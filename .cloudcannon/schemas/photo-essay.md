@@ -1,14 +1,16 @@
 ---
 title: My New Photo Essay
+image:
 authors:
-  - author:
-    article_role: Author
+teaser:
 publishDate:
+tags:
 article_topper:
+  _bookshop_name: design-system/topper/article-hero
 photo_essay_blocks:
   - _bookshop_name: design-system/section/rich-text
     text:
-show_author_bios: true
+show_author_bios: false
 properties:
   exclude_from_search_engines: false
   meta_description:

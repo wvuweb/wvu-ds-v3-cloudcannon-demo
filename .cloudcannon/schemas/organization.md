@@ -1,13 +1,19 @@
 ---
-name_of_organization: New Organization
+name: New Organization
+url:
 image:
+heading:
+subheading:
 alt_text:
 logo:
-organization_topper:
 description:
 location:
 contacts:
 social_media_accounts:
+organization_topper:
+  _bookshop_name: design-system/topper/organization
+heading:
+subheading:
 detail_blocks:
   - _bookshop_name: design-system/column/rich-text
     text: Text.

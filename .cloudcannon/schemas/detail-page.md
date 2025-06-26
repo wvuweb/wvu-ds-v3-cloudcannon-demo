@@ -1,6 +1,7 @@
 ---
 title: New Detail Page
 topper:
+hide_section_menu: false
 detail_blocks:
 detail_sidebar_blocks:
 properties:

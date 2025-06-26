@@ -2,18 +2,15 @@
 name: New Faculty
 first_name:
 last_name:
-image_lg:
-  src:
-  alt:
+url:
 profile_image:
+image_lg:
 description:
 position:
   - organization:
     title:
 quote:
 staff_contact_info:
-dir_include: true
-is_contact: true
 faculty_files:
 dir_include: true
 is_contact: true
@@ -27,6 +24,7 @@ properties:
   exclude_from_search_engines: false
   meta_description:
   social_image:
+  recirculate: true
 uuid:
 type: faculty-profile
 metadata:
