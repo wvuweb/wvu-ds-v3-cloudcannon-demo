@@ -10,6 +10,7 @@ topper:
   subheading:
   body_text: ''
   ctas: []
+  postscript: {}
   settings:
     styles:
       audience: prospective_students
@@ -37,7 +38,7 @@ content_blocks:
       - topic: First-Time Freshmen
         description: >-
           You are a current high school senior, have a TASC/GED or haven't
-          attended college since graduating.
+          attended college since graduating. Come get some!
         items:
           - text: Apply as a First-Time Freshman
             url:
@@ -48,7 +49,9 @@ content_blocks:
           - text: Change Your Major
             url:
       - topic: Transfer Students
-        description: You have attended college since graduating from high school.
+        description: >-
+          You have attended college since graduating from high school. We are
+          better than that other place!
         items:
           - text: Apply as a Transfer Student
             url:
@@ -59,7 +62,9 @@ content_blocks:
           - text: Check Your Status
             url:
       - topic: International Undergraduate Students
-        description: You are not a U.S. citizen or U.S. permanent resident.
+        description: >-
+          You are not a U.S. citizen or U.S. permanent resident. The world is
+          welcome!
         items:
           - text: Apply as a International Undergraduate Student
             url:
@@ -78,8 +83,8 @@ content_blocks:
         remove_container_background: false
       layout:
         margin:
-        padding: py-6 py-xxl-7
         buffer: pb-6
+        padding: py-6 py-xxl-7
       config:
         edit_mode_only: false
         include_heading_postscript: false
@@ -130,15 +135,16 @@ content_blocks:
         bg_subtle:
         enable_blend: false
         tint_opacity: '0.7'
+        remove_container_background: false
       layout:
+        buffer: pt-6
         margin:
         padding: py-6 py-xxl-7
-        buffer: pt-6
       config:
         edit_mode_only: false
         include_heading_postscript: false
   - _bookshop_name: design-system/section/cta-banner
-    heading: Interested in talking to someone about WVU?
+    heading: We want to tell you about WVU
     subheading:
     buttons:
       - text: Connect with Your Admissions Counselor
@@ -158,9 +164,9 @@ content_blocks:
         enable_blend: false
         tint_opacity: '0.7'
       layout:
+        buffer:
         margin:
         padding: py-6 py-xxl-7
-        buffer:
       config:
         edit_mode_only: false
         include_heading_postscript: false

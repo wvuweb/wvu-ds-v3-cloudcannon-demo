@@ -12,6 +12,7 @@ topper:
     break the bank.
   body_text: ''
   ctas: []
+  postscript: {}
   settings:
     styles:
       audience: prospective_students
@@ -69,7 +70,7 @@ content_blocks:
         badge:
         text: >-
           Earn spending money and valuable experience for your resume. We'll
-          help you find a job on campus or off campus.
+          help you find a job on campus or off campus. Come work with us!
         ctas:
           - text: Learn About Student Employment
             icon:

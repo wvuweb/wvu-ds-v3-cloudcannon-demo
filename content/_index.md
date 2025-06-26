@@ -5,10 +5,11 @@ topper:
   label:
   background_image: /uploads/guy-sitting-outside.jpg
   alt_text:
-  heading: Be Bold Enough to Dream Big
+  heading: Be Bold Enough to Dream Super Big
   subheading: The first thing you’ll learn here is that “impossible” is just a challenge.
   body_text: ''
   ctas: []
+  postscript: {}
   settings:
     styles:
       audience: prospective_students
@@ -17,6 +18,7 @@ topper:
       enable_blend: false
       enable_pattern: false
       tint_opacity: '0.5'
+      heading_size: display-2
     layout:
       buffer: py-6
       text_placement: mx-auto text-center
@@ -177,8 +179,8 @@ content_blocks:
       layout:
         buffer:
         margin_no_bg:
-        padding: py-6 py-xxl-7
         is_cutout: true
+        padding: py-6 py-xxl-7
       config:
         edit_mode_only: false
         include_heading_postscript: false
