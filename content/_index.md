@@ -5,11 +5,10 @@ topper:
   label:
   background_image:
   alt_text:
-  heading: WVU Design System Test
+  heading: Welcome to the Greatest Place on Earth
   subheading: >-
-    The WVU Design System is a set of principles and guidelines, as well as a
-    collection of code and visual assets that make it easy to create WVU-branded
-    websites.
+    The content within this site is the greatest content you will ever lay eyes
+    upon. It is the greatest content of all time.
   markdown: ''
   ctas:
     - text: See What's New
