@@ -1,6 +1,6 @@
 ---
 _schema: detail_page
-title: About the Goat
+title: About the GOAT
 topper:
   _bookshop_name: design-system/topper/default
   subheading: The origin of the Greatest Of All Time
