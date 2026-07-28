@@ -5,7 +5,7 @@ topper:
   label:
   background_image:
   alt_text:
-  heading: Welcome to the Greatest Place on Earth
+  heading: Test
   subheading: >-
     The content within this site is the greatest content you will ever lay eyes
     upon. It is the greatest content of all time.
